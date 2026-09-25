@@ -440,7 +440,7 @@ endfunction
 function! NERDTreeCopyPath()
     let l:nodePath = g:NERDTreeFileNode.GetSelected().path.str()
     if has('clipboard')
-        if &clipboard ==# 'unnamedplus'
+        if &clipboard =~ 'unnamedplus'
             let @+ = l:nodePath
         else
             let @* = l:nodePath
